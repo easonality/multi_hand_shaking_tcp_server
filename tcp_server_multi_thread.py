@@ -155,7 +155,7 @@ class Frame(wx.Frame):
 
 if __name__ == '__main__':
     app = wx.App()
-    Frame(None, title = 'multi-tcp-server v1.0.0')
+    Frame(None, title='multi-tcp-server v1.0.0')
     app.MainLoop()
 
 
