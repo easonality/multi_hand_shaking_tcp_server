@@ -14,7 +14,7 @@ class frame(wx.Frame):
         initalize
         '''
         super(frame, self).__init__(parent, title = title, size = (350, 250))
-        self.ip = '111.221.93.202'
+        self.ip = 'localhost'
         self.port_min = 0
         self.port_max = 0
         
