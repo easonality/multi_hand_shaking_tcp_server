@@ -3,7 +3,7 @@ import socket
 import select
 import time
 
-class tcp_server:
+class Tcp_server:
     
     #-------------------------------------------------------------
     def __init__(self):
