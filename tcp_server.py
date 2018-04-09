@@ -8,11 +8,11 @@ class Tcp_server:
     #-------------------------------------------------------------
     def __init__(self):
         self.server = None
-        self.data   = None
+        self.data = None
 
-        self.inputs  = []
+        self.inputs = []
         self.outputs = []
-        self.map     = []
+        self.map = []
 
     #-------------------------------------------------------------
     def run(self, addr):
@@ -22,9 +22,9 @@ class Tcp_server:
         self.server.bind(addr)
         self.server.listen(2)
 
-        self.inputs  = [self.server]
+        self.inputs = [self.server]
         self.outputs = []
-        self.map     = []
+        self.map = []
 
         while 1:
             #try:
@@ -76,10 +76,9 @@ class Tcp_server:
             self.map.remove(client)
         client.close()
 
-if __name__ == '__main__':
-    
+if __name__ == '__main__':  
     ip_local = 'localhost'
-    ip = '111.221.93.202'
+    ip = 'localhost'
     print('self run')
     tcp_server().run((ip_local,2001))
 
