@@ -128,8 +128,8 @@ class Frame(wx.Frame):
         high = int(self.text_port_max.GetValue())
 
         for i in range(low, high+1):
-            addr = (ip,i)
-            th = threading.Thread(target = self.func, args = (addr,))
+            addr = (ip, i)
+            th = threading.Thread(target=self.func, args=(addr,))
             th.daemon = True
             th.start()
 
