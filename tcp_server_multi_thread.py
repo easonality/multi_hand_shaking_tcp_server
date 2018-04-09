@@ -6,14 +6,14 @@ import os
 import sys
 import tcp_server as ts
 
-class frame(wx.Frame):
+class Frame(wx.Frame):
 
     #-------------------------------------------------------------
     def __init__(self, parent, title):
         '''
         initalize
         '''
-        super(frame, self).__init__(parent, title = title, size = (350, 250))
+        super(frame, self).__init__(parent, title=title, size=(350, 250))
         self.ip = 'localhost'
         self.port_min = 0
         self.port_max = 0
@@ -32,35 +32,35 @@ class frame(wx.Frame):
         self.label_port = wx.StaticText(panel, -1, 'ports:')
 
         # Set buttons
-        self.button_ip_change = wx.Button(panel, -1, label = 'change')
+        self.button_ip_change = wx.Button(panel, -1, label='change')
         self.button_ip_change.Enable(True)
 
-        self.button_port_change = wx.Button(panel, -1, label = 'change')
+        self.button_port_change = wx.Button(panel, -1, label='change')
         self.button_port_change.Enable(True)
 
-        self.button_run = wx.Button(panel, -1, label = 'run')
+        self.button_run = wx.Button(panel, -1, label='run')
         self.button_run.Enable(True)
 
-        self.button_get_ip = wx.Button(panel, -1, label = 'get ip')
+        self.button_get_ip = wx.Button(panel, -1, label='get ip')
         self.button_get_ip.Enable(True)
         
-        self.button_stop = wx.Button(panel, -1, label = 'stop')
+        self.button_stop = wx.Button(panel, -1, label='stop')
         self.button_stop.Enable(False)
         
         # Set texts
-        self.text_ip = wx.TextCtrl(panel, -1, size = (100,25), style = wx.ALIGN_LEFT)
+        self.text_ip = wx.TextCtrl(panel, -1, size=(100,25), style=wx.ALIGN_LEFT)
         self.text_ip.SetValue(self.ip)
         self.text_ip.Enable(False)
 
-        self.text_port_min = wx.TextCtrl(panel, -1, size = (45,25), style = wx.ALIGN_LEFT)
+        self.text_port_min = wx.TextCtrl(panel, -1, size=(45,25), style=wx.ALIGN_LEFT)
         self.text_port_min.SetValue('2000')
         self.text_port_min.Enable(False)
 
-        self.text_port_max = wx.TextCtrl(panel, -1, size = (45,25), style = wx.ALIGN_LEFT)
+        self.text_port_max = wx.TextCtrl(panel, -1, size=(45,25), style=wx.ALIGN_LEFT)
         self.text_port_max.SetValue('2010')
         self.text_port_max.Enable(False)
 
-        self.adj = wx.StaticText(panel, -1, size = (25,25), style = wx.ALIGN_LEFT, label = '')
+        self.adj = wx.StaticText(panel, -1, size = (25,25), style=wx.ALIGN_LEFT, label='')
 
         # Set sizers
         sizer1 = wx.BoxSizer(wx.HORIZONTAL)
@@ -150,11 +150,14 @@ class frame(wx.Frame):
 
     #-------------------------------------------------------------
     def func(self, addr):
-        return ts.tcp_server().run(addr)
+        return ts.Tcp_server().run(addr)
 
 
 if __name__ == '__main__':
     app = wx.App()
-    frame(None, title = 'multi-tcp-server v1.0.0')
+    Frame(None, title = 'multi-tcp-server v1.0.0')
     app.MainLoop()
+
+
+
 
